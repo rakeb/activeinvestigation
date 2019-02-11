@@ -27,6 +27,12 @@ def read_input_file():
     return content
 
 
+def write_new_line_in_file(line=None):
+    with open(INPUT_DOMAIN_LIST, 'a') as f:
+        f.write('\n')
+        f.write(line)
+
+
 def load_reputation_matrix():
     try:
         with open('reputation_matrix',
@@ -34,7 +40,7 @@ def load_reputation_matrix():
             credential = pickle.load(i)
             return credential
     except:
-        raise ('Exception occurred while reading reputation_matrix\n')
+        raise 'Exception occurred while reading reputation_matrix\n'
 
 
 def save_reputation_matrix(rep):
@@ -74,4 +80,5 @@ def calculate_reputation():
 
 
 if __name__ == '__main__':
-    calculate_reputation()
+    # calculate_reputation()
+    write_new_line_in_file('facebook.com')
