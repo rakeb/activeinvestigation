@@ -200,4 +200,5 @@ if __name__ == '__main__':
         "api-key": "NA",
         "ip-address": "65.190.141.7"
     }
-    investigate(req)
+    res = investigate(req)
+    print("response: {}".format(res))
