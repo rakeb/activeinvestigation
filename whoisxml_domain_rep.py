@@ -114,7 +114,7 @@ def investigate(json_req):
 
         if json_req[INVESTIGATION_TYPE] == GEO_LOCATION:
             ip_add = json_req[IP_ADD]
-            investigation_url = get_domain_reputation_url(api_key, ip_add)
+            investigation_url = get_geo_location_url(api_key, ip_add)
             file_name = GEO_LOCATION_FILE_NAME
             search_criteria = ip_add
 
@@ -195,9 +195,9 @@ def investigate(json_req):
 if __name__ == '__main__':
     # investigation - type can be domain-reputation, dns-lifetime or geo-location
     req = {
-        "investigation-type": "dns-lifetime",
+        "investigation-type": "geo-location",
         "domain-name": "google.com",
         "api-key": "NA",
-        "ip-address": "152.15.47.208"
+        "ip-address": "65.190.141.7"
     }
     investigate(req)
